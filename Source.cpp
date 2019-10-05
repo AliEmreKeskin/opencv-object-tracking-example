@@ -33,10 +33,9 @@ int main(int argc, char** argv)
 
 		// process the frame if init is true
 		if (init) {			
-			/*cv::Rect search_area(0, 0, frame.size().width / 2, frame.size().height / 2);*/
-			if (tracker->update(frame/*(search_area)*/, roi)) {
+			if (tracker->update(frame, roi)) {
 				// if update is succesful draw the rectangle
-				cv::rectangle(frame, roi, cv::Scalar(255, 0, 0));
+				cv::rectangle(frame, roi, cv::Scalar(0, 255, 0),2);
 			}
 		}
 
